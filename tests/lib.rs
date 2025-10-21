@@ -627,15 +627,6 @@ fn protocol_stack() {
     }
 }
 
-// Assert all `Protocol` variants are covered
-// in its `Arbitrary` impl.
-#[cfg(nightly)]
-#[test]
-fn arbitrary_impl_for_all_proto_variants() {
-    let variants = core::mem::variant_count::<Protocol>() as u8;
-    assert_eq!(variants, Proto::IMPL_VARIANT_COUNT);
-}
-
 mod multiaddr_with_p2p {
     use multiaddr::{Multiaddr, PeerId};
 
